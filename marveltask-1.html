@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Get the Value of Text Input Field in JavaScript</title>
+</head>
+<body>
+    <input type="text" placeholder="Student Name 1." id="myInput1">
+    <input type="text" placeholder="Mark1  ." id="myInput11">
+    <input type="text" placeholder="Mark2 ." id="myInput12">
+    <input type="text" placeholder="Mark3." id="myInput13">
+     <br>
+    <input type="text" placeholder="Student Name 2." id="myInput2">
+    <input type="text" placeholder="Mark1  ." id="myInput21">
+    <input type="text" placeholder="Mark2 ." id="myInput22">
+    <input type="text" placeholder="Mark3." id="myInput23">
+    <br>
+    <input type="text" placeholder="Student Name 1." id="myInput3">
+    <input type="text" placeholder="Mark1  ." id="myInput31">
+    <input type="text" placeholder="Mark2 ." id="myInput32">
+    <input type="text" placeholder="Mark3." id="myInput33">
+    <br>
+    <input type="text" placeholder="Student Name 1." id="myInput4">
+    <input type="text" placeholder="Mark1  ." id="myInput41">
+    <input type="text" placeholder="Mark2 ." id="myInput42">
+    <input type="text" placeholder="Mark3." id="myInput43">
+    <br>
+    <input type="text" placeholder="Student Name 1." id="myInput5">
+    <input type="text" placeholder="Mark1  ." id="myInput51">
+    <input type="text" placeholder="Mark2 ." id="myInput52">
+    <input type="text" placeholder="Mark3." id="myInput53">
+    <br>
+
+
+
+
+
+    <button type="button" onclick="getInputValue();">Get Value</button>
+
+    <p id="info" style="font-style:italic;"></p>
+    
+    <script>
+        var totalMarks =0; 
+        var firstMap = new Map();
+        function showData(firstMap )
+        {
+            document.getElementById('info').innerHTML = ""; 
+
+             // Grade 
+            let entries = Array.from(firstMap);
+            entries.sort ((a,b )=> a[1] -b[1]);
+            let sortedMap = new Map(entries);
+            var i =5;
+
+            
+
+            for (let [key, value] of sortedMap) {
+             info.innerHTML =  info.innerHTML  + "Student Name :" + key + ' ' + "Percentage:  "+  + value +"%"; 
+             info.innerHTML = info.innerHTML + "Ranking:  " + i;
+             info.innerHTML = info.innerHTML + '<br />'; 
+             
+             i--;
+            }
+        //Class average 
+
+            var classAvg = (totalMarks/5);
+
+            info.innerHTML = info.innerHTML + '<br />'; 
+            info.innerHTML = info.innerHTML + "Class Average" +" " + classAvg; 
+            info.innerHTML = info.innerHTML + '<br />'; 
+
+       
+
+
+        }
+        function getInputValue(){
+            // Selecting the input element and get its value 
+            var studentName = document.getElementById("myInput1").value;
+            var totalStuMark = parseInt(document.getElementById("myInput11").value )+ parseInt(document.getElementById("myInput12").value) + parseInt(document.getElementById("myInput13").value) ;
+            var percenTage =  parseFloat((totalStuMark/300) *100);
+            totalMarks = totalMarks +totalStuMark;
+
+            firstMap.set(studentName, percenTage);
+
+            
+            //print the above data for each student 
+            //showData(studentName,percenTage);
+            //console.log("percen" + percenTage);
+
+            studentName = document.getElementById("myInput2").value;
+            totalStuMark = parseInt(document.getElementById("myInput21").value )+ parseInt(document.getElementById("myInput22").value) + parseInt(document.getElementById("myInput23").value) ;
+            percenTage =  parseFloat((totalStuMark/300) *100);
+            totalMarks = totalMarks +totalStuMark;
+
+            firstMap.set(studentName, percenTage);
+
+            //showData(studentName,percenTage);
+
+
+            studentName = document.getElementById("myInput3").value;
+            totalStuMark = parseInt(document.getElementById("myInput31").value )+ parseInt(document.getElementById("myInput32").value) + parseInt(document.getElementById("myInput33").value) ;
+            percenTage =  parseFloat((totalStuMark/300) *100);
+            totalMarks = totalMarks +totalStuMark;
+
+            firstMap.set(studentName, percenTage);
+
+            //showData(studentName,percenTage);
+
+            studentName = document.getElementById("myInput4").value;
+            totalStuMark = parseInt(document.getElementById("myInput41").value )+ parseInt(document.getElementById("myInput42").value) + parseInt(document.getElementById("myInput43").value) ;
+            percenTage =  parseFloat((totalStuMark/300) *100);
+            totalMarks = totalMarks +totalStuMark;
+
+            firstMap.set(studentName, percenTage);
+            //showData(studentName,percenTage);
+
+
+            studentName = document.getElementById("myInput5").value;
+            totalStuMark = parseInt(document.getElementById("myInput51").value )+ parseInt(document.getElementById("myInput52").value) + parseInt(document.getElementById("myInput53").value) ;
+            percenTage =  parseFloat((totalStuMark/300) *100);
+            totalMarks = totalMarks +totalStuMark;
+
+            firstMap.set(studentName, percenTage);
+
+
+
+            console.log("hashmap", firstMap);
+
+            //print the above data for each student 
+            showData(firstMap);
+            
+            // Displaying the value
+            
+        }
+        
+    </script>
+</body>
+</html>
