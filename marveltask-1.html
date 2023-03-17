@@ -5,6 +5,8 @@
 <title>Get the Value of Text Input Field in JavaScript</title>
 </head>
 <body>
+    <h3> Enter the Student's Mark details </h3>
+    <br>
     <input type="text" placeholder="Student Name 1." id="myInput1">
     <input type="text" placeholder="Mark1  ." id="myInput11">
     <input type="text" placeholder="Mark2 ." id="myInput12">
@@ -32,10 +34,11 @@
     <br>
 
 
+    <br>
+    <br>
 
 
-
-    <button type="button" onclick="getInputValue();">Get Value</button>
+    <button type="button" onclick="getInputValue();">Calculate Values</button>
 
     <p id="info" style="font-style:italic;"></p>
     
@@ -55,8 +58,8 @@
             
 
             for (let [key, value] of sortedMap) {
-             info.innerHTML =  info.innerHTML  + "Student Name :" + key + ' ' + "Percentage:  "+  + value +"%"; 
-             info.innerHTML = info.innerHTML + "Ranking:  " + i;
+             info.innerHTML =  info.innerHTML  + "<b> Student Name: </b>  " + key + '   ' + "<b>  Percentage: </b>   "+  + value +"%    "; 
+             info.innerHTML = info.innerHTML + "  <b> Ranking:  </b> " + i;
              info.innerHTML = info.innerHTML + '<br />'; 
              
              i--;
@@ -66,7 +69,7 @@
             var classAvg = (totalMarks/5);
 
             info.innerHTML = info.innerHTML + '<br />'; 
-            info.innerHTML = info.innerHTML + "Class Average" +" " + classAvg; 
+            info.innerHTML = info.innerHTML + " <b> Class Average : </b> " +"    " + classAvg; 
             info.innerHTML = info.innerHTML + '<br />'; 
 
        
